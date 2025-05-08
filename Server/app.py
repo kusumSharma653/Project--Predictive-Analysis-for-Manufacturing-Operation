@@ -10,8 +10,8 @@ app = Flask(__name__)
 
 # Error handling for file loading
 try:
-    preprocessing_pipeline = pickle.load(open("C:/Users/Yash Dabral/OneDrive/Desktop/Internship task/Processing/preprocessing_pipeline.pkl", 'rb'))
-    model = pickle.load(open("C:/Users/Yash Dabral/OneDrive/Desktop/Internship task/Processing/voting_classifier_model.pkl", 'rb'))
+    preprocessing_pipeline = pickle.load(open("C:\Users\Hp\Desktop\Predictive-Analysis\Predictive-Analysis-for-Manufacturing-Operations\Processing\preprocessing_pipeline.pkl", 'rb'))
+    model = pickle.load(open("C:\Users\Hp\Desktop\Predictive-Analysis\Predictive-Analysis-for-Manufacturing-Operations\Processing\voting_classifier_model.pkl", 'rb'))
 except Exception as e:
     print(f"Error loading model or pipeline: {e}")
 
@@ -97,6 +97,8 @@ def predict():
         return jsonify({'Downtime': result})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
 
 if __name__ == "__main__":
     # Run the app
